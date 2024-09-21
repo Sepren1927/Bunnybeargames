@@ -1,7 +1,7 @@
 // Variables
 let money = 0;
 let earn = 1;
-let passiveIncome = 0; // Passive income variable
+let passiveIncome = 0;
 
 // Load game data from localStorage
 function loadGame() {
@@ -77,4 +77,5 @@ document.getElementById("saveBtn").addEventListener("click", saveGame);
 
 // Load game data when the game starts
 loadGame();
+
 
