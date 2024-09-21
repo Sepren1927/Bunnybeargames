@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clicker Game</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Clicker Game</h1>
+        <p id="welcome">Welcome, player!</p>
+
+        <div id="stats">
+            <p>Money: <span id="money">0</span></p>
+            <p>Earn per click: <span id="earn">1</span></p>
+            <p>Passive income: <span id="passive">0</span> per 3 seconds</p>
+        </div>
+
+        <button id="clickBtn">Click to earn money</button>
+        <button id="storeBtn">Go to Store</button>
+
+        <div id="store" style="display:none;">
+            <h2>Store</h2>
+            <p>Price to upgrade earning: <span id="upgradePrice">10</span></p>
+            <button id="buyUpgrade">Buy Upgrade</button>
+            <p>Price to buy passive income: <span id="passivePrice">100</span></p>
+            <button id="buyPassive">Buy Passive Income</button>
+            <button id="closeStore">Close Store</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
