@@ -16,7 +16,6 @@ function saveGame() {
     localStorage.setItem('money', money);
     localStorage.setItem('earn', earn);
     localStorage.setItem('passiveIncome', passiveIncome);
-    alert("Game saved!");
 }
 
 // Update display function
@@ -24,7 +23,18 @@ function updateDisplay() {
     document.getElementById("money").innerText = money;
     document.getElementById("earn").innerText = earn;
     document.getElementById("passive").innerText = passiveIncome;
+    updatePrices();
 }
+
+function updatePrices() {
+    let upgradePrice = Math.pow(earn, 2) * 10;
+    let passivePrice = Math.pow(passiveIncome + 1, 3) * 100;
+    document.getElementById("upgradePrice").innerText = upgradePrice;
+    document.getElementById("passivePrice").innerText = passivePrice;
+}
+
+// Call this function after every money change or store interaction
+
 
 // Passive income interval
 setInterval(() => {
@@ -54,7 +64,6 @@ document.getElementById("buyUpgrade").addEventListener("click", () => {
         money -= upgradePrice;
         earn += 1;
         updateDisplay();
-        alert("Upgrade complete!");
     } else {
         alert("Not enough money for upgrade.");
     }
@@ -65,8 +74,7 @@ document.getElementById("buyPassive").addEventListener("click", () => {
     if (money >= passivePrice) {
         money -= passivePrice;
         passiveIncome += 1;
-        updateDisplay();
-        alert("Passive income purchase complete!");
+        updateDisplay();;
     } else {
         alert("Not enough money for passive income.");
     }
